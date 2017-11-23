@@ -1,0 +1,353 @@
+Command Line Arguments – Def, Syntax, Examples
+
+The main difference here it has when passing the command line inputs as arguments. The inputs were directly written with the execution file command.
+Thereby the function-calls the value directly from the main method ( string args[]). For instance , command line arguments are executed and compiles as follows :
+
+Example Code : 1 ( # Without command line arguments # Check output )
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+class A
+    {
+    	public static void main(String args[])
+  	{
+ 
+    
+          System.out.println("hello world");
+ 
+  	}
+     }
+Output #1 :
+1
+2
+3
+     compilation:javac A.java
+     execution:java A 
+     output:hello world
+Example code # 2 : With command line arguments : 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+class A
+{
+  public static void main(String args[])
+  {
+ 
+   System.out.println(args[0]);
+   System.out.println(args[1]);
+ 
+ 
+  }
+}
+Output # 2 :
+1
+2
+3
+     compilation:javac A.java
+     execution:java A 10 20
+     Output : 10 20
+// Here Command line Arguments are 10,20 and these values are stored as an array and those values were sent to the main function. In order to get that values, we are using the method called ” string args[] ” as a formal argument. 
+Example code# 3 : Another Example same as like # Example # 2 :
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+class A
+{
+  public static void main(String args[])
+  {
+ 
+   System.out.println(args[0]);
+   System.out.println(args[1]); 
+   System.out.println(args[2]);
+   System.out.println(args[3]);
+ 
+ 
+  }
+}
+Output #3 :
+1
+2
+3
+   Compile   : javac A.java
+   Execution : java A   10   2.5   a   helloworld
+   Output    :    10 2.5 a helloworld
+Example code # 4 : (Sample Error Program )
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+class A
+{
+  public static void main(String args[])
+  {
+ 
+   System.out.println(args[0]); 
+   System.out.println(args[1]);
+   System.out.println(args[2]);
+   
+ 
+ 
+  }
+}
+Output : 
+1
+2
+3
+4
+Compile : Javac A.java
+execution:java A   10 20
+Output : Exception occur called ArrayOutOfBoundException() because access args[2] is not valid and there is no data to acces after 10,20 
+it gives exception // Error //
+So you get an idea how to take command line arguments in java.
+
+**************************************************************************************************
+**************************************************************************************************
+
+What Is Parse Method ?
+
+PARSE : It is a method which take a string(input) as an argument and convert in other formats as like :
+Integer
+Float
+Double
+
+
+THE TYPES OF PARSE METHODS :
+parseInt();
+parseDouble();
+parseFloat();
+
+
+THE FUNCTIONS OF PARSE METHODS :
+ParseInt(); – It is a member function in Integer Class;
+ParseDouble(); – It is a member function in Double Class;
+ParseFloat(); – It is a member function in Float Class;
+
+
+>> Example : ( Parse Int )
+      Syntax:Integer.parseInt(String s);
+Example1: String s=”156?; //156 is not a number it is string;
+System.out.println(s+1); //output:1561 :”156?+1=1561 string concatenation.
+int x=Integer.parseInt(“156”);
+System.out.println(x+1); //output:157 :156+1=157
+
+
+Syntax:Double.parseDouble(String s);
+Example : 2
+String s=”156.5?; //156.5 is not a number it is a string;
+System.out.println(s+1); //output:1561 :”156.5?+1=156.51 string concetation
+double x=Double.parseDouble(“156.5”);
+System.out.println(x+1); //output:157.5:156.5+1=157.5
+
+
+NOTE:- // Double Function is as same as Float // The main difference is , where double is 8-Bytes and float is 4- Bytes. It’s all up to you which one to choose.
+
+-----------------------------------------------------------
+
+/ Conversion of String into Integer Without Parse Method // Check Out The Output //
+Example program# 1 : ( Without Parse ) 
+Without Parse :Java
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+class A
+{
+  public static void main(String args[])
+  {
+ 
+   System.out.println(args[0]+1);
+   System.out.println(args[1]+1);
+ 
+ 
+  }
+}
+Output : 
+1
+2
+3
+Compile : Javac A.java
+Execution : Java A  10 20
+Output : 101 201
+Error : When the user is given a number , the system won’t understand that it was a number instead of, it considers it has a string. If we suppose to add anything to that it become concatenation ex :args[0]+1=”10?+1=101
+In order to get rid of that error , we are using a method called parse .Check out how the program works with the help of parse method :
+
+
+-----------------------------------------------------------------
+
+Example program # 2:  ( With Parse ) : 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+class A
+{
+  public static void main(String args[])
+  {
+  int a=Integer.parseInt(args[1]);//"10" convert to 10 and it will store in a
+  int b=Integer.parseInt(args[0]);//"20" convert to 20 and it will store in b
+   System.out.println(a+1);
+   System.out.println(b+1);
+ 
+ 
+  }
+}
+Output : 
+1
+2
+3
+Compile : Javac A.java
+Execution : Java A 10 20 
+Output : 11 21
+// That’s How the Parse method works //.
+If you have any doubts related to command line arguments , do comment here. We will help you out.
+
+
+
+
+link :- https://javatutoring.com/command-line-arguments-java-with-examples/
+
+*******************************************************************************************
+*******************************************************************************************
+
+DEFAULT PARAMATERIZED CONSTRUCTION
+
+ A constructor may have or may not have parameters. parameters are variables to receive data from outside into the constructor. If a constructor does not have any parameters, it is called default  constructor.If a constructor have one or more parameters, it is called parameterized constructor.
+
+-------------------------------------------------------------------
+
+A constructor has the following properties:
+
+1. The constructor's name and class name should be same and the constructors name should be ended with a pair of simple braces.
+
+2. A constructor may have or may not have parameters. parameters are variables to receive data from
+    outside into the constructor. If a constructor does not have any parameters, it is called default  constructor.If a constructor have one or more parameters, it is called parameterized constructor.
+
+3. A constructor does not return any value, not even void
+4. A constructor is automatically called and executed at the time of creating an object.
+    Example:
+
+                Person p1 = new  Person(); // here default constructor is called
+                Person p2 = new Person("Raju", 22); // here parameterized constructor is called.
+5.A constructor is called and executed only one per object, This means when we create an object, the
+   constructor is called. When we create second object, again the constructor is called second time.
+
+
+--------------------------------------------------------------------------------
+
+The following program show how Java default and parameterized constructors works
+
+
+import java.io.*;
+import java.util.*;
+class person
+{
+private String name;
+private int age;
+person()           // java default constructor used to initialize instance variables
+{
+name = "Raju";   
+age = 22;
+}
+
+person (String s, int i)
+{
+name=s;
+age=i;
+}
+void talk()
+{
+System.out.println(" Hello I am" +name);
+System.out.println(" my age is" +age);
+}
+}
+class Demo
+{
+public static void main( String args[])
+{
+person p1 = new person();
+p1.talk();
+person p2 = new person ( "sita", 20);
+p2.talk();
+}
+}
+
+
+---------------------------------------------------------------------
+
+LINK:- http://www.tutorialtpoint.net/2016/07/java-default-parameterized-constructors.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
